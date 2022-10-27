@@ -6,6 +6,10 @@ RUN echo 'root:Docker!' | chpasswd
 
 RUN /opt/solr/bin/solr stop -all
 
+RUN apt-get update -yqq \
+    && apt-get install -y --no-install-recommends \
+        sudo
+
 ADD start.sh /usr/local/bin/start
 
 # Copy local_data volumes into data directory
