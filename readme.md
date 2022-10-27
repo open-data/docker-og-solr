@@ -2,7 +2,7 @@
 
 Pre-configured Solr Docker image for Open Government Portal.
 
-Open Source: https://github.com/open-data/docker-og-solr
+Docker Image: https://hub.docker.com/r/opendatacanada/solr
 
 Note: These images are not vulnerable to __CVE-2021-44228 / Log4J2__ as are built on top of [patched upstream Solr images.](https://github.com/apache/solr-docker#readme)
 
