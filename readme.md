@@ -2,17 +2,19 @@
 
 Pre-configured Solr Docker image for Open Government Portal.
 
-Note: These images are not vulnerable to CVE-2021-44228 / Log4J2 as are built on top of [patched upstream Solr images.](https://github.com/docker-solr/docker-solr#readme)
+Open Source: https://github.com/open-data/docker-og-solr
+
+Note: These images are not vulnerable to __CVE-2021-44228 / Log4J2__ as are built on top of [patched upstream Solr images.](https://github.com/apache/solr-docker#readme)
 
 ```
-docker run --name og-solr -p 8983:8983 -d open-data/docker-og-solr
+docker run --name og-solr -p 8983:8983 -d opendatacanada/solr
 ```
 
 The following versions are available as different image tags:
 
 | Solr version  | Docker tag |
 | ------------- | ------------- |
-| Solr 8  | open-data/docker-og-solr  |
+| Solr 8  | opendatacanada/solr  |
 
 All these images expose the Solr endpoint at http://localhost:8983/solr/
 
@@ -20,7 +22,7 @@ All these images expose the Solr endpoint at http://localhost:8983/solr/
 
 1. Run a container:
    ```
-   docker run --name og-solr -p 8983:8983 -d open-data/docker-og-solr
+   docker run --name og-solr -p 8983:8983 -d opendatacanada/solr
    ```
 
 2. Copy the Solr data directory of the target core to your machine:
@@ -35,5 +37,5 @@ All these images expose the Solr endpoint at http://localhost:8983/solr/
 
 4. Run the container with a bind mount:
    ```
-   docker run --name og-solr -p 8983:8983 --mount type=bind,source="$(pwd)"/my_solr_data,target=/var/solr/data -d open-data/docker-og-solr
+   docker run --name og-solr -p 8983:8983 --mount type=bind,source="$(pwd)"/my_solr_data,target=/var/solr/data -d opendatacanada/solr
    ```
