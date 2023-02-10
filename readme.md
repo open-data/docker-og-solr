@@ -39,3 +39,37 @@ All these images expose the Solr endpoint at http://localhost:8983/solr/
    ```
    docker run --name og-solr -p 8983:8983 --mount type=bind,source="$(pwd)"/my_solr_data,target=/var/solr/data -d opendatacanada/solr
    ```
+
+### Building for Committing to the Docker Hub
+
+Your docker account will need to be part of the organization `opendatacanada`
+
+1. Log into the docker hub (this is only required once):
+   ```
+   docker login
+   ```
+
+2. Build the image:
+   ```
+   docker build ./
+   ```
+
+3. Run the new docker image with the hash from the end of the previous command output:
+   ```
+   docker run -d sha256:<image hash>
+   ```
+
+4. Get the container ID:
+   ```
+   docker ps
+   ```
+
+5. Commit the build:
+   ```
+   docker commit <container ID> opendatacanada/solr
+   ```
+
+6. Push the build to the docker hub:
+   ```
+   docker push opendatacanada/solr
+   ```
