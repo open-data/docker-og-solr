@@ -41,6 +41,7 @@ const Configuration = {
       2,
       'always',
       [
+        'conf',
         'cores',
         'docker',
         'dev',
