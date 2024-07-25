@@ -1,4 +1,4 @@
-FROM solr:9
+FROM solr:9.6.1
 
 USER root
 
@@ -18,7 +18,7 @@ ADD cores /var/solr/local_data
 RUN mkdir -p /var/solr/data \
     && cp -R /var/solr/local_data/* /var/solr/data \
     && chown -R solr:solr /var/solr/data \
-    && chown -R solr:solr /opt/docker-solr \
+    && chown -R solr:solr /opt/solr/docker \
     && chmod 777 /usr/local/bin/start
 
 RUN echo 'solr:Docker!' | chpasswd \
