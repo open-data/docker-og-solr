@@ -173,9 +173,24 @@ attribute with the form `ckan-X.Y` -->
     <dynamicField name="res_extras_*" type="text" indexed="true" stored="true" multiValued="true"/>
     <dynamicField name="vocab_*" type="string" indexed="true" stored="true" multiValued="true"/>
     <dynamicField name="*" type="string" indexed="true"  stored="false"/>
+
+    <!-- IMPORTANT: Extra Canada fields :IMPORTANT -->
+    <field name="title_fr" type="string" indexed="true" stored="false" />
+    <field name="catalog_type" type="string" indexed="true" stored="true" multiValued="true"/>
+    <field name="keywords" type="string" indexed="true" stored="true" multiValued="true"/>
+    <field name="keywords_fra" type="string" indexed="true" stored="true" multiValued="true"/>
+    <field name="subject" type="string" indexed="true" stored="true" multiValued="true"/>
+    <field name="topic_category" type="string" indexed="true" stored="true" multiValued="true"/>
+    <field name="spatial_representation_type" type="string" indexed="true" stored="true" multiValued="true"/>
+    <field name="ready_to_publish" type="boolean" indexed="true" stored="true"/>
+    <!-- END: Extra Canada fields :END -->
 </fields>
 
 <uniqueKey>index_id</uniqueKey>
+<!-- IMPORTANT: Extra Canada config :IMPORTANT -->
+<df>text</df>
+<solrQueryParser q.op="AND"/>
+<!-- END: Extra Canada config :END -->
 
 <copyField source="url" dest="urls"/>
 <copyField source="title" dest="title_ngram"/>
