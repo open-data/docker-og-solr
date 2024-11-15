@@ -183,6 +183,9 @@ attribute with the form `ckan-X.Y` -->
     <field name="topic_category" type="string" indexed="true" stored="true" multiValued="true"/>
     <field name="spatial_representation_type" type="string" indexed="true" stored="true" multiValued="true"/>
     <field name="ready_to_publish" type="boolean" indexed="true" stored="true"/>
+    <field name="related_relationship" type="string" indexed="true" stored="true" multiValued="true"/>
+    <field name="related_type" type="string" indexed="true" stored="true" multiValued="true"/>
+    <field name="related_url_translated" type="string" indexed="true" stored="true" multiValued="true"/>
     <!-- END: Extra Canada fields :END -->
 </fields>
 
